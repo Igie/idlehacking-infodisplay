@@ -1,0 +1,2 @@
+# LF everywhere: the userscript is served raw from GitHub, and the release build compares files byte for byte
+* text=auto eol=lf

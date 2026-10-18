@@ -1,0 +1,11 @@
+node_modules/
+
+# dev builds (npm run build / watch); the loader holds a path on this disk
+dev/
+
+# raw recordings and item dumps: other players' names, and too big for the repo
+data/
+idlehacking-affixes*.json
+idlehacking-affixes*.json.gz
+idlehacking-combat*.json
+idlehacking-combat*.json.gz

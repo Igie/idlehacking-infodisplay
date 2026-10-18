@@ -1,0 +1,30 @@
+name: Something's wrong
+description: A panel addition is missing or broken, a number looks wrong, or the game misbehaves with the script on.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you saw, and what you expected. Screenshots help.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Script version
+      description: Shown at the top of the INFO DISPLAY page (left menu), or in Tampermonkey's dashboard.
+      placeholder: "0.3.0"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and userscript manager
+      placeholder: "Brave 1.83, Tampermonkey 5.4"
+  - type: textarea
+    id: console
+    attributes:
+      label: Console messages
+      description: Open the browser console (F12), reload the game, and paste the lines that start with [InfoDisplay].
+      render: text

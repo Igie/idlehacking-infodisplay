@@ -1,0 +1,19 @@
+{
+  "name": "idlehacking-infodisplay",
+  "private": true,
+  "type": "module",
+  "description": "Tampermonkey userscript for idlehacking.com: extra info in the game's own panels",
+  "license": "MIT",
+  "repository": "github:Igie/idlehacking-infodisplay",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "watch": "node tools/build.mjs --watch",
+    "release": "node tools/build.mjs --release",
+    "install-dev": "node tools/install-dev.mjs",
+    "seed": "node tools/make-seed.mjs",
+    "merge": "node tools/make-seed.mjs --merge",
+    "check-combat": "node tools/check-combat.mjs",
+    "compact-combat": "node tools/compact-combat.mjs",
+    "fit-enemies": "node tools/fit-enemies.mjs"
+  }
+}

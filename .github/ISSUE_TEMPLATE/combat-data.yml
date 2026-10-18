@@ -1,0 +1,66 @@
+name: Share recorded fights
+description: Attach recorded fights so the streak simulator can model more zones and mechanics.
+title: "Fights: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping! The game resolves fights on its server, so everything the streak simulator knows
+        about enemies comes from recorded fights. The most useful recordings are:
+
+        - zones the simulator lists as **"not measured yet"**. A zone needs about 100 fights of each of the
+          9 enemy types (roughly 1,000 fights) before it can be modelled, and recordings from several players add up.
+        - accounts with things the simulator doesn't cover yet: signatures, lifesteal, Quarantine Rules,
+          Snapshot Rollback, homelab enemy reductions, gear automation.
+
+        **How to record**
+
+        1. Open **INFO DISPLAY** at the bottom of the game's left menu and tick **record fights**.
+        2. In **Hacking › COMBAT LOG**, tick **Detailed Logs**. This sends the round-by-round logs.
+        3. Click your name in the **USER INFO** panel once (it loads your combat stats), and open **Homelab** once.
+        4. Hack in the zone until the streak ends. One whole streak is the minimum, and more is better.
+        5. Optional: click **View Last 10 Losses** and open each loss. That loads their logs too.
+        6. Click **EXPORT FIGHTS** on the INFO DISPLAY page. It saves `idlehacking-combat-<time>.json.gz`.
+        7. Drag that file into the box below. Untick **record fights** afterwards if you like.
+
+        The export holds the recorded fights, your combat stats breakdown, equipped gear, homelab and the
+        game's own simulator history, so anyone reading this issue can see your gear and stats. It does not
+        contain your username, and other players' names on items are removed.
+  - type: textarea
+    id: file
+    attributes:
+      label: Export file
+      description: Drag the .json.gz file here (GitHub takes files up to 25 MB). Several files are fine.
+    validations:
+      required: true
+  - type: input
+    id: zone
+    attributes:
+      label: Zone(s) recorded
+      placeholder: "Data Center"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Script version
+      description: Shown at the top of the INFO DISPLAY page (left menu).
+      placeholder: "0.3.0"
+  - type: checkboxes
+    id: mechanics
+    attributes:
+      label: Your account has
+      description: Tick whatever was active while recording.
+      options:
+        - label: Signatures
+        - label: Lifesteal
+        - label: Quarantine Rules
+        - label: Snapshot Rollback
+        - label: Homelab enemy reductions
+        - label: Gear set automation
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything unusual?
+      description: For example, how the simulator's median compared with your real streaks, or a game update during recording.
